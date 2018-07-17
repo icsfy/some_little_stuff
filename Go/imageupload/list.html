@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> List </title>
+</head>
+<body>
+    <h1> 图片列表： </h1>
+    <hr>
+    <ol>
+        {{range $.images}}
+        <li>
+            <a href="/view?id={{.|urlquery}}"> {{.|html}} </a> ------
+            [<a href="/delete?id={{.|urlquery}}"> 删除 </a>]
+        </li>
+        {{end}}
+    </ol>
+    <hr>
+    <a href="/upload"> 上传图片 </a>
+</body>
+</html>
